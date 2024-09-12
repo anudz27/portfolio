@@ -6,7 +6,7 @@ tailwind.config = {
        Ovo: ['Ovo', 'serif']
       },
       colors:{
-        lighHover:'#F4F4F4',
+        lighHover:'#0F1035',
         darkHover:'#1A1A1A',
         darkTheme:'#11001F'
       }
