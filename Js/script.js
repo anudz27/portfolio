@@ -10,11 +10,11 @@ function closeMenu(){
 }
 window.addEventListener('scroll', ()=>{
 if(scrollY > 50){
-    navBar.classList.add('bg-white','bg-opacity-50','shadow-sm','backdrop-blur-lg');
-    navLinks.classList.remove('bg-white','shadow-sm',' bg-opacity-50');
+    navBar.classList.add('bg-white','bg-opacity-50','shadow-sm','backdrop-blur-lg', 'dark:bg-[#11001F]','dark:shadow-white/20');
+    navLinks.classList.remove('bg-white','shadow-sm',' bg-opacity-50','dark:border','dark:border-white/70','dark:transition');
 }else{
-    navBar.classList.remove('bg-white','bg-opacity-50','shadow-sm','backdrop-blur-lg');
-}
+    navBar.classList.remove('bg-white','bg-opacity-50','shadow-sm','backdrop-blur-lg','dark:bg-[#11001F]','dark:shadow-white/20');
+}   navLinks.classList.add('bg-white','shadow-sm',' bg-opacity-50','dark:border','dark:border-white/70','dark:transition');
 })
 
 
