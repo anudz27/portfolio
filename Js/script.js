@@ -35,3 +35,21 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
       localStorage.theme = 'light'
     }
   }
+  AOS.init({
+    duration: 1000, // Animation duration
+    once: true, // Whether animation should happen only once
+});
+
+function showEducation() {
+  document.getElementById('educationSection').classList.remove('hidden');
+  document.getElementById('volunteeringSection').classList.add('hidden');
+  document.getElementById('educationBtn').classList.add('', 'text-white');
+  document.getElementById('volunteeringBtn').classList.remove('bg-blue-500', 'text-white');
+}
+
+function showVolunteering() {
+  document.getElementById('educationSection').classList.add('hidden');
+  document.getElementById('volunteeringSection').classList.remove('hidden');
+  document.getElementById('volunteeringBtn').classList.add('', 'text-white');
+  document.getElementById('educationBtn').classList.remove('bg-blue-500', 'text-white');
+}
