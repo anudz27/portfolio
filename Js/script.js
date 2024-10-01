@@ -53,3 +53,17 @@ function showVolunteering() {
   document.getElementById('volunteeringBtn').classList.add('', 'text-white');
   document.getElementById('educationBtn').classList.remove('bg-blue-500', 'text-white');
 }
+const showMoreBtn = document.querySelector("#show-more-btn");
+        const extraProjects = document.querySelector("#extra-projects");
+
+        showMoreBtn.addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent the default anchor behavior
+
+            if (extraProjects.classList.contains("hidden")) {
+                extraProjects.classList.remove("hidden");
+                showMoreBtn.textContent = "Show less";
+            } else {
+                extraProjects.classList.add("hidden");
+                showMoreBtn.textContent = "Show more";
+            }
+        });
