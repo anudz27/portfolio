@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
+    
+    <title>Portfolio</title>
+    <script src="https://kit.fontawesome.com/YOUR-KIT-ID.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class= "overflow-x-hidden relative font-Outfit leading-8 dark:bg-[#11001F] dark:text-white">
+
+    <!-- Full background gradient image -->
+    <div class="fixed inset-0 -z-10 dark:hidden">
+        <img src="./src/img/gradient.jpg" alt="" class="object-cover w-full h-full">
+
+        
+    </div>
+    <nav id="navBar" class="flex justify-between items-center px-6 py-4 shadow-sm w-full fixed top-0 bg-white dark:bg-[#11001F] z-50">
+    <img src="./src/img/logo_b.png" href="#top" class="w-40 ml-10 dark:hidden">
+
+    <img src="./src/img/logo_w.png" class="w-40 cursor-pointer hidden dark:block">
+
+    <!-- Navigation Links for Desktop -->
+    <ul id="navlinks" class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 font-Ovo bg-opacity-50 shadow-sm
+    dark:border dark:border-white/50 dark:bg-transparent">
+        <li><a class="hover:text-blue" href="#top">Home</a></li>
+        <li><a href="#aboutme">About me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact me</a></li>
+    </ul>
+
+    <!-- Theme Toggle and Contact Button -->
+    <div class="flex items-center gap-4">
+        <button onclick="toggleTheme()">
+            <img src="./src/img/moon.png" class="w-5 mr-10 dark:hidden">
+            <img src="./src/img/sun.png" class="w-5 mr-10 hidden dark:block">
+        </button>
+
+        <!-- Contact Button (Desktop) -->
+        <a href="#contact" class="hidden lg:flex items-center gap-3 px-10 py-2.5 shadow-sm border-2 bg-white bg-opacity-50
+        border-grey-500 rounded-full font-Ovo mr-10 dark:border-white/50 dark:bg-transparent">Contact</a>
+
+        <!-- Mobile Menu Button -->
+        <button class="block md:hidden ml-3" onclick="openMenu()">
+            <img src="./src/img/menu.png" alt="" class="w-4 dark:hidden">
+            <img src="./src/img/menu_w.png" alt="" class="w-4 dark:block">
+        </button>
+    </div>
+        <!-- mobile menu -->
+        <ul id="sideMenu" class="flex md:flex-col py-20 px-10 fixed -right-64 top-0 bottom-0
+        w-64 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-[#2a004a]">
+        <div class="absolute right-6 top-6" onclick="closeMenu()">
+            <img src="./src/img/close.png" alt="" class="w-5 cursor-pointer dark:hidden">
+            
+            <img src="./src/img/close_w.png" alt="" class="w-5 cursor-pointer dark:block">
+        </div>
+            <div class="flex flex-col items-center justify-center h-full gap-6 font-Ovo">
+                <a href="#top" onclick="closeMenu() ">Home</a>
+                <a href="#aboutme" onclick="closeMenu() ">About me</a>
+                <a href="#skills" onclick="closeMenu() ">Skills</a>
+                <a href="#projects" onclick="closeMenu() ">Projects</a>
+                <a href="#contact" onclick="closeMenu() ">Contact me</a>
+            </div>
+    </nav>
+
+    <!-- header -->
+    <div class="w-11/12 max-w-3xl text-center mx-auto min-h-screen flex flex-col items-center justify-center gap-4 pt-10 md:pt-20" data-aos="fade-up">
+        <img src="./src/img/profile pic.png" 
+     alt="Profile Picture"
+     class="rounded-full w-24 sm:w-32 md:w-40 lg:w-48 xl:w-48 h-auto mx-auto" 
+     data-aos="zoom-in">
+
+    
+        <h3 class="flex items-center justify-center gap-2 text-lg sm:text-xl md:text-2xl mb-2 sm:mb-3 font-Ovo" data-aos="fade-right">
+            Hi! I'm Anuththara Dias 
+            <img src="./src/img/wave.png" alt="" class="w-8 sm:w-8">
+        </h3>
+    
+        <h1 class="text-3xl sm:text-4xl lg:text-[40px] font-Ovo" data-aos="fade-left">Software Developer. Passionate Designer. Lifelong Learner.</h1>
+    
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-4" data-aos="fade-up">
+            <a href="#contact" class="px-6 py-3 sm:px-8 sm:py-3 border-2 border-[#0F1035] bg-[#0F1035] rounded-full text-white flex items-center gap-2 hover:bg-transparent hover:border-lighHover hover:bg-lighHover transition-colors duration-300 hover:text-[#0F1035] hover:border-[#0F1035] dark:border-white dark:bg-white dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:hover:border-white">
+                Contact me
+            </a>
+            <a href="#downloadcv" class="px-6 py-3 sm:px-8 sm:py-3 border-2 border-black rounded-full text-[#0F1035] flex items-center gap-2 hover:border-[#0F1035] hover:bg-[#0F1035] transition-colors duration-300 hover:text-white hover:border-[#0F1035] dark:border-white dark:text-white dark:hover:bg-white dark:hover:border-white dark:hover:text-black">
+                Download CV
+            </a>
+        </div>
+    
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 mt-6 sm:mt-8" data-aos="fade-in">
+            <div class="icon linkdin bg-white/50 rounded-full p-2 sm:p-3 shadow-[0_4px_10px_rgba(0,0,0,0.3)] hover:bg-[#0a66c2] hover:text-white dark:bg-white">
+                <a href="https://www.linkedin.com/in/anuththara-dias-4b1986250/">
+                    <img src="./src/img/linkedin.png" alt="" class="w-7 sm:w-9">
+                </a>
+            </div>
+            <div class="icon github bg-white/50 rounded-full p-2 sm:p-3 shadow-[0_4px_10px_rgba(0,0,0,0.3)] hover:bg-[#9146ff] hover:text-white dark:bg-white">
+                <a href="https://github.com/anudz27">
+                    <img src="./src/img/github.png" alt="" class="w-7 sm:w-9">
+                </a>
+            </div>
+            <div class="icon facebook bg-white/50 rounded-full p-2 sm:p-3 shadow-[0_4px_10px_rgba(0,0,0,0.3)] hover:bg-[#1877f2] hover:text-white dark:bg-white">
+                <a href="https://www.facebook.com/profile.php?id=100084765497126">
+                    <img src="./src/img/facebook.png" alt="" class="w-7 sm:w-9">
+                </a>
+            </div>
+            <div class="icon instagram bg-white/50 rounded-full p-2 sm:p-3 shadow-[0_4px_10px_rgba(0,0,0,0.3)] hover:bg-[#c32aa3] hover:text-white dark:bg-white">
+                <a href="https://www.instagram.com/anudz_27/">
+                    <img src="./src/img/instagram (1).png" alt="" class="w-7 sm:w-9">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- aboutme -->
+    <div id="aboutme" class="w-full px-4 py-10 scroll-mt-20" data-aos="fade-up">
+        <h2 class="text-center text-4xl sm:text-5xl font-bold font-Ovo">About Me</h2>
+        <h4 class="text-center mb-2 text-md sm:text-lg font-Ovo">Introduction</h4>
+    
+        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 py-10 sm:py-20" data-aos="fade-up">
+            <div class="relative mx-auto lg:ml-20" data-aos="zoom-in">
+                <div class="flex justify-center lg:justify-start lg:ml-20">
+                    <!-- Light Mode Profile Picture -->
+                    <img src="./src/img/profile-pic-light.png" alt="Profile Picture Light Mode" class="w-80 md:w-96 lg:w-[350px] xl:w-[400px] dark:hidden">
+                    
+                    <!-- Dark Mode Profile Picture -->
+                    <img src="./src/img/profile-pic-dark.png" alt="Profile Picture Dark Mode" class="w-80 md:w-96 lg:w-[350px] xl:w-[400px] hidden dark:block">
+                </div>
+                
+
+                <div class="bg-white w-20 sm:w-1/2 aspect-square absolute right-0 -bottom-6 sm:-bottom-10 rounded-full transform translate-x-1/2 -translate-y-1 shadow-[0_4px_55px_rgba(149,162,0,0.15)] flex items-center justify-center lg:mr-200">
+                    <img src="./src/img/circular_text.png" class="w-full animate-spin_slow ">
+                </div>
+            </div>
+            <div class="flex-1" data-aos="fade-left">
+                <p class="mb-8 text-center lg:text-left max-w-xl mx-auto lg:mx-0 px-6 lg:px-0 lg:ml-40 font-Ovo">
+                    Hello there! I am Anuththara Dias, a software developer with a passion for designing and a love for learning.
+                    <br><br>Currently, I'm a third-year undergraduate at Sabaragamuwa University of Sri Lanka, Faculty of Computing Department of Computing and Information Systems.
+                    <br><br> I’m excited to connect and bring my passion for design and development to innovative projects. I’m currently on the lookout for an internship opportunity where I can apply my skills in software development and UI/UX design, while continuing to learn and grow. Let’s collaborate to create something extraordinary together!
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:ml-40" data-aos="fade-up">
+                    <a href="#downloadcv" class="px-8 py-3 border-2 border-black rounded-full text-[#0F1035] hover:border-[#0F1035] hover:bg-[#0F1035] transition-colors duration-300 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:border-white dark:hover:text-black">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full text-center py-10 " data-aos="fade-up">
+        <a id="educationBtn" class="relative px-6 py-2 text-[#0F1035] font-semibold text-4xl group dark:text-white" onclick="showEducation()">
+            Education 
+            <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#0F1035] dark:bg-white transition-all duration-300 group-hover:w-full "></span>
+        </a>
+        <span class="px-6 py-2 text-[#0F1035] font-semibold text-4xl"> | </span>
+        <a id="volunteeringBtn" class="relative px-6 py-2 text-[#0F1035] font-semibold text-4xl group dark:text-white" onclick="showVolunteering()">
+            Volunteering
+            <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#0F1035] dark:bg-white transition-all duration-300 group-hover:w-full"></span>
+        </a>
+    </div>
+    
+    
+    
+    <!-- Education Section -->
+    <div id="educationSection" class="w-full px-[12%] py-10 scroll-mt-20 " data-aos="fade-up">
+        <h2 class="text-center text-4xl font-bold mb-12">Education</h2>
+        <div class="relative border-l-4 border-gray-300 dark:border-gray-700">
+            <!-- Timeline Item 1 -->
+            <div class="timeline_item mb-10 ml-10">
+                <div class="absolute w-8 h-8 bg-blue-500 rounded-full left-[-16px] flex items-center justify-center ">
+                    <div class="timeline_dot w-4 h-4 bg-white rounded-full"></div>
+                </div>
+                <div class="timeline_date text-lg font-semibold text-[#0F1035] dark:text-blue-500">2020</div>
+                <div class="timeline_content mt-2 p-4 bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                    <h3 class="text-xl font-bold mb-1">G.C.E. Advanced Level | Physical Science Stream </h3>
+                    <p>Southlands College, Galle</p>
+                </div>
+            </div>
+            <!-- Timeline Item 2 -->
+        <div class="timeline_item mb-10 ml-10">
+            <div class="absolute w-8 h-8 bg-blue-500 rounded-full left-[-16px] flex items-center justify-center">
+                <div class="timeline_dot w-4 h-4 bg-white rounded-full"></div>
+            </div>
+            <div class="timeline_date text-lg font-semibold text-[#0F1035] dark:text-blue-500">2021</div>
+            <div class="timeline_content mt-2 p-4 bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                <h3 class="text-xl font-bold mb-1">English Language Certificate Level  </h3>
+                <p>Aquinas College of Higher Studies</p>
+            </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline_item mb-10 ml-10">
+            <div class="absolute w-8 h-8 bg-blue-500 rounded-full left-[-16px] flex items-center justify-center">
+                <div class="timeline_dot w-4 h-4 bg-white rounded-full"></div>
+            </div>
+            <div class="timeline_date text-lg font-semibold text-[#0F1035] dark:text-blue-500">2022 - Present</div>
+            <div class="timeline_content mt-2 p-4 bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                <h3 class="text-xl font-bold mb-1">BSc (Hons) in Computing & Information Systems</h3>
+                <p>Sabaragamuwa University of Sri Lanka</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Volunteering Section (Initially Hidden) -->
+<div id="volunteeringSection" class="w-full px-[12%] py-10 scroll-mt-20 hidden">
+    <h2 class="text-center text-4xl font-bold mb-12">Volunteering Experiences</h2>
+    <div class="relative border-l-4 border-gray-300 dark:border-gray-700">
+        <!-- Timeline Item 1 -->
+        <div class="timeline_item mb-10 ml-10">
+            <div class="absolute w-8 h-8 bg-blue-500 rounded-full left-[-16px] flex items-center justify-center">
+                <div class="timeline_dot w-4 h-4 bg-white rounded-full"></div>
+            </div>
+            <div class="timeline_date text-lg font-semibold text-[#0F1035] dark:text-blue-500">2024</div>
+            <div class="timeline_content mt-2 p-4 bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                <h3 class="text-xl font-bold mb-1">Pearl Hack 2.0 | Organizing Committee | Design Team Member</h3>
+                <p>IEEE WIE Student Branch Affinity Group of SUSL</p>
+            </div>
+        </div>
+       <!-- Timeline Item 2 -->
+       <div class="timeline_item mb-10 ml-10">
+        <div class="absolute w-8 h-8 bg-blue-500 rounded-full left-[-16px] flex items-center justify-center">
+            <div class="timeline_dot w-4 h-4 bg-white rounded-full"></div>
+        </div>
+        <div class="timeline_date text-lg font-semibold text-[#0F1035] dark:text-blue-500">2024</div>
+        <div class="timeline_content mt-2 p-4 bg-white dark:bg-gray-800 shadow-md rounded-lg">
+            <h3 class="text-xl font-bold mb-1">A Hope | Organizing Committee | Design Team Member</h3>
+            <p>IEEE WIE Student Branch Affinity Group of SUSL</p>
+        </div>
+    </div>
+<!-- Timeline Item 3 -->
+<div class="timeline_item mb-10 ml-10">
+    <div class="absolute w-8 h-8 bg-blue-500 rounded-full left-[-16px] flex items-center justify-center">
+        <div class="timeline_dot w-4 h-4 bg-white rounded-full"></div>
+    </div>
+    <div class="timeline_date text-lg font-semibold text-[#0F1035] dark:text-blue-500">2024</div>
+    <div class="timeline_content mt-2 p-4 bg-white dark:bg-gray-800 shadow-md rounded-lg">
+        <h3 class="text-xl font-bold mb-1">Volunteer at ComURS 2024</h3>
+        <p>Computing Undergraduate Research Symposium 2024L</p>
+    </div>
+</div>
+<!-- Timeline Item 4 -->
+<div class="timeline_item mb-10 ml-10">
+    <div class="absolute w-8 h-8 bg-blue-500 rounded-full left-[-16px] flex items-center justify-center">
+        <div class="timeline_dot w-4 h-4 bg-white rounded-full"></div>
+    </div>
+    <div class="timeline_date text-lg font-semibold text-[#0F1035] dark:text-blue-500">2024 - Ongoing</div>
+    <div class="timeline_content mt-2 p-4 bg-white dark:bg-gray-800 shadow-md rounded-lg">
+        <h3 class="text-xl font-bold mb-1">Pathforward | Organizing Committee | Co-Chair</h3>
+        <p>IEEE WIE Student Branch Affinity Group of SUSL</p>
+    </div>
+</div>
+    <!-- Timeline Item 5 -->
+    <div class="timeline_item mb-10 ml-10">
+        <div class="absolute w-8 h-8 bg-blue-500 rounded-full left-[-16px] flex items-center justify-center">
+            <div class="timeline_dot w-4 h-4 bg-white rounded-full"></div>
+        </div>
+        <div class="timeline_date text-lg font-semibold text-[#0F1035] dark:text-blue-500">2024 - Ongoing</div>
+        <div class="timeline_content mt-2 p-4 bg-white dark:bg-gray-800 shadow-md rounded-lg">
+            <h3 class="text-xl font-bold mb-1">QWhiz 1.0 | Organizing Committee | Logistic Team Member</h3>
+            <p>IEEE WIE Student Branch Affinity Group of SUSL</p>
+        </div>
+    </div>
+    <!-- Timeline Item 6 -->
+    <div class="timeline_item mb-10 ml-10">
+        <div class="absolute w-8 h-8 bg-blue-500 rounded-full left-[-16px] flex items-center justify-center">
+            <div class="timeline_dot w-4 h-4 bg-white rounded-full"></div>
+        </div>
+        <div class="timeline_date text-lg font-semibold text-[#0F1035] dark:text-blue-500">2024 - Ongoing</div>
+        <div class="timeline_content mt-2 p-4 bg-white dark:bg-gray-800 shadow-md rounded-lg">
+            <h3 class="text-xl font-bold mb-1">ShutScore | Organizing Committee | Design Team Member</h3>
+            <p>IEEE WIE Student Branch Affinity Group of SUSL</p>
+        </div>
+    </div>
+     
+    </div>
+</div>
+  
+
+<!-- skills -->
+<div id="skills" class="w-full px-[5%] py-10 scroll-mt-20" data-aos="fade-up">
+    <h2 class="text-center text-3xl md:text-5xl font-bold font-Ovo" data-aos="fade-right">Skills</h2>
+    <h4 class="text-center text-sm md:text-lg mb-8 md:mb-20 font-Ovo" data-aos="fade-left">Technical Skills and Tools</h4>
+    
+    <!-- Skills Container -->
+    <div class="mx-auto max-w-4xl" data-aos="fade-up">
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Technologies Section -->
+            <li class="p-6 cursor-pointer" data-aos="zoom-in">
+                <img src="./src/img/code_b.png" alt="" class="w-7 mt-3 mx-auto dark:hidden" data-aos="fade-down ">
+                <img src="./src/img/code _w.png" alt="" class="w-7 mt-3 mx-auto hidden dark:block" data-aos="fade-down ">
+                <h3 class="my-4 font-semibold text-gray-700 text-center font-Ovo dark:text-white">Technologies</h3>
+                <ul class="flex flex-row gap-4 flex-wrap justify-center mt-4 md:mt-8" data-aos="fade-right">
+                    <!-- Technology Icons -->
+                    <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/html.png" alt="React Icon" style="width: 70px; height: 70px;">
+                    </li>
+                    <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/css.png" alt="React Icon" style="width: 70px; height: 70px;">
+                    </li> <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/js.png" alt="React Icon" style="width: 70px; height: 70px;">
+                    </li> <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/reactjs.png" alt="React Icon" style="width: 70px; height: 70px;">
+                    </li> <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/java.png" alt="React Icon" style="width: 70px; height: 70px;">
+                    </li> <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/c.png" alt="React Icon" style="width: 70px; height: 70px;">
+                    </li> <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/pyrthon.png" alt="React Icon" style="width: 70px; height: 70px;">
+                    </li>
+                    <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/nodejs.png" alt="React Icon" style="width: 70px; height: 70px;">
+                    </li> 
+                    <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/mysql.png" alt="React Icon" style="width: 60px; height: 60px;">
+                    </li> 
+                    <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/mongodb.png" alt="React Icon" style="width: 70px; height: 70px;">
+                    </li>
+                    <!-- Repeat for other icons -->
+                </ul>
+            </li>
+            
+            <!-- Tools Section -->
+            <li class="p-6 cursor-pointer" data-aos="zoom-in">
+                <img src="./src/img/project-management_b.png" alt="" class="w-7 mt-3 mx-auto dark:hidden" data-aos="fade-down">
+                <img src="./src/img/project-management_w.png" alt="" class="w-7 mt-3 mx-auto hidden dark:block" data-aos="fade-down">
+                <h3 class="my-4 font-semibold text-gray-700 text-center font-Ovo dark:text-white">Tools</h3>
+                <ul class="flex flex-row gap-4 flex-wrap justify-center mt-4 md:mt-8" data-aos="fade-left">
+                    <!-- Tool Icons -->
+                    <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/vscode.png" alt="VS Code Icon" style="width: 60px; height: 60px;">
+                    </li>
+                    <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/postman.png" alt="VS Code Icon" style="width: 60px; height: 60px;">
+                    </li>
+                    <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/figma.png" alt="VS Code Icon" style="width: 60px; height: 60px;">
+                    </li>
+                    <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/ps.png" alt="VS Code Icon" style="width: 60px; height: 60px;">
+                    </li>
+                    <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]" data-aos="flip-up">
+                        <img src="./src/img/ai.png" alt="VS Code Icon" style="width: 50px; height: 50px;">
+                    </li>
+                    <!-- Repeat for other icons -->
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+    <!-- <div id="skills" class="w-full px-[1%] py-10 scroll-mt-20">
+        <h2 class="text-center text-5xl font-bold font-Ovo">Skills</h2>
+        <h4 class="text-center text-lg mb-20 font-Ovo">Technical Skills and tools</h4>
+        <div class="mt-45 ml-20 mr-20">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2x">
+                <li class="p-6 cursor-pointer">
+                    <img src="./src/img/code.png" alt="" class="w-7 mt-3 mx-auto">
+                    <h3 class="my-4 font-semibold text-gray-700 text-center font-Ovo dark:text-white">Technologies</h3>
+                    <ul class="flex flex-row gap-6 flex-wrap justify-center mt-20">
+                        <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                            <img src="./src/img/html.png" alt="HTML Icon" style="width: 70px; height: 70px;">
+                        </li>
+                        <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                            <img src="./src/img/css.png" alt="CSS Icon" style="width: 70px; height: 70px;">
+                        </li>
+                        <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                            <img src="./src/img/js.png" alt="JS Icon" style="width: 70px; height: 70px;">
+                        </li>
+                        <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                            <img src="./src/img/reactjs.png" alt="React Icon" style="width: 70px; height: 70px;">
+                        </li>
+                        <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                            <img src="./src/img/nodejs.png" alt="NodeJS Icon" style="width: 70px; height: 70px;">
+                        </li>
+                        <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                            <img src="./src/img/java.png" alt="Java Icon" style="width: 70px; height: 70px;">
+                        </li>
+                        <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                            <img src="./src/img/pyrthon.png" alt="Python Icon" style="width: 70px; height: 70px;">
+                        </li>
+                        <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                            <img src="./src/img/c.png" alt="C Icon" style="width: 70px; height: 70px;">
+                        </li>
+                        <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                            <img src="./src/img/mongodb.png" alt="MongoDB Icon" style="width: 70px; height: 70px;">
+                        </li>
+                        <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                            <img src="./src/img/mysql.png" alt="MySQL Icon" style="width: 60px; height: 60px;">
+                        </li>
+                    </ul>
+                </li>
+                
+                
+                <li class=" p-6 cursor-pointer">
+                    <img src="./src/img/settings.png" alt="" class="w-7 mt-3 mx-auto">
+                        <h3 class="my-4 font-semibold text-gray-700 text-center font-Ovo dark:text-white">Tools</h3>
+                        <ul class="flex flex-row gap-6 flex-wrap justify-center mt-20">
+                            <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                                <img src="./src/img/vscode.png" alt="HTML Icon" style="width: 60px; height: 60px;">
+                            </li>
+                            <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                                <img src="./src/img/git.png" alt="CSS Icon" style="width: 60px; height: 60px;">
+                            </li>
+                            <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                                <img src="./src/img/postman.png" alt="JS Icon" style="width: 60px; height: 60px;">
+                            </li>
+                            <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                                <img src="./src/img/figma.png" alt="React Icon" style="width: 60px; height: 60px;">
+                            </li>
+                            <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                                <img src="./src/img/ps.png" alt="NodeJS Icon" style="width: 60px; height: 60px;">
+                            </li>
+                            <li class="flex items-center justify-center rounded-full w-24 aspect-square bg-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] cursor-pointer hover:-translate-y-1 duration-500 transition-transform hover:bg-[#fcf4ff] hover:shadow-[4px_4px_0_#000]">
+                                <img src="./src/img/ai.png" alt="Java Icon" style="width: 50px; height: 50px;">
+                            </li>
+                            
+                        </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </div> -->
+   
+<!-- Projects Section -->
+<div id="projects" class="w-full px-4 sm:px-[5%] py-10 scroll-mt-20" data-aos="fade-up">
+    <h2 class="text-center text-3xl sm:text-5xl font-bold" data-aos="fade-up">Projects</h2>
+    <h4 class="text-center text-base sm:text-lg mt-2" data-aos="fade-up">Some of my recent projects</h4>
+
+    <!-- Responsive Grid container to hold the project cards in a row -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 my-12 justify-center">
+        <!-- CoLive Project Card -->
+        <div class="aspect-square bg-[url('./src/img/p2.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group" data-aos="zoom-in">
+            <div class="bg-white w-11/12 rounded-md absolute -bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                <div>
+                    <h2 class="font-semibold dark:text-black">CoLive Project</h2>
+                    <p class="text-sm text-gray-700">Full-stack web App</p>
+                    <p class="text-sm text-black-700 dark:text-black">Angular | NodeJs | MongoDB | Python</p>
+                </div>
+                <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-purple-300 transition">
+                    <a href="https://github.com/sithum110/mini_project"><img src="./src/img/github.png" alt="" class="w-5"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Project Card -->
+        <div class="aspect-square bg-[url('./src/img/p1.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group" data-aos="zoom-in" data-aos-delay="100">
+            <div class="bg-white w-11/12 rounded-md absolute -bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                <div>
+                    <h2 class="font-semibold dark:text-black">Portfolio Project</h2>
+                    <p class="text-sm text-gray-700">My personal portfolio</p>
+                    <p class="text-sm text-black-700 dark:text-black">HTML | Tailwind CSS | JavaScript</p>
+                </div>
+                <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-purple-300 transition">
+                    <a href="https://github.com/anudz27/portfolio"><img src="./src/img/github.png" alt="" class="w-5"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Movie Hub Project Card -->
+        <div class="aspect-square bg-[url('./src/img/p3.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group" data-aos="zoom-in" data-aos-delay="200">
+            <div class="bg-white w-11/12 rounded-md absolute -bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                <div>
+                    <h2 class="font-semibold dark:text-black">Movie Hub</h2>
+                    <p class="text-sm text-gray-700">Movie Search Engine</p>
+                    <p class="text-sm text-black-700 dark:text-black">React JS | Tailwind CSS</p>
+                </div>
+                <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-purple-300 transition">
+                    <a href="https://github.com/anudz27/movie_application"><img src="./src/img/github.png" alt="" class="w-5"></a>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <!-- Additional Project Cards (Initially Hidden) -->
+    <div id="extra-projects" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 my-12 justify-center">
+        <div class="aspect-square bg-[url('./src/img/cargovelo.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group transition-transform duration-300 transform hover:scale-105" data-aos="zoom-in" data-aos-delay="200">
+            <div class="bg-white w-11/12 rounded-md absolute -bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between transition-all duration-500 group-hover:bottom-7 group-hover:shadow-lg">
+                <div>
+                    <h2 class="font-semibold dark:text-black">CargoVelo</h2>
+                    <p class="text-sm text-gray-700">UI/UX Design for cargo delivery</p>
+                    <p class="text-sm text-black-700 dark:text-black">Figma</p>
+                </div>
+                <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] transition-colors duration-300 group-hover:bg-rose-400 group-hover:shadow-md">
+                    <a href="https://www.figma.com/design/dGXGdg5HQTe0UFhrpfIN1y/Cargo-App?node-id=0-1&t=d8TmaUMpWzzLSyxE-1"><img src="./src/img/figma icon.png" alt="" class="w-5"> </a>
+                </div>
+           
+            </div>
+        </div>
+    </div>
+    
+    
+    
+        <!-- More hidden project cards can be added here -->
+    </div>
+
+    <!-- Show more button -->
+    <a id="show-more-btn" href="#" class="w-max flex items-center justify-center gap-2 text-black-700 border-2 border-black rounded-full px-8 py-3 mx-auto my-20 hover:border-[#0F1035] hover:bg-[#0F1035] transition-colors duration-300 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:border-white dark:hover:text-black" data-aos="fade-up">Show more</a>
+</div>
+
+<!-- Contact me -->
+<div id="contact" class="w-full px-[12%] py-10 scroll-mt-20" data-aos="fade-up">
+    <h2 class="text-center text-5xl font-bold font-Ovo" data-aos="fade-up">Contact me</h2>
+    <h4 class="text-center text-lg mb-40 font-Ovo" data-aos="fade-up">Get in touch with me</h4>
+    <form method="POST" action="https://api.web3forms.com/submit">
+
+        <input type="hidden" name="access_key" value="54b1b985-3ddb-4d03-a642-6304fd3795b8">
+
+        <div class="grid grid-cols-2 gap-6 mt-10 mb-8">
+            <input type="text" placeholder="Enter your name" class="flex-1 p-3 outline-none border-[0.25px] border-black rounded-md bg-white dark:bg-[#2a004a]/30 dark:border-white/90" required name="name" data-aos="fade-up">
+
+            <input type="email" placeholder="Enter your email" class="flex-1 p-3 outline-none border-[0.25px] border-black rounded-md bg-white dark:bg-[#2a004a]/30 dark:border-white/90" required name="email" data-aos="fade-up">
+        </div>
+        <textarea rows="6" placeholder="Enter your message" class="w-full p-4 outline-none border-[0.25px] border-black rounded-md bg-white mb-6 dark:bg-[#2a004a]/30 dark:border-white/90" required name="message" data-aos="fade-up"></textarea>
+        <button class="py-3 px-8 w-max flex items-center justify-between gap-2 bg-[#0F1035]/70 text-white rounded-full mx-auto hover:bg-[#0F1035] duration-500 dark:border-white dark:bg-white dark:text-black dark:hover:bg-transparent dark:hover:text-white dark:hover:border-white" data-aos="fade-up">Submit now</button>
+    </form>
+</div>
+
+    <!-- Footer -->
+     <div class="mt-20">
+        <div class="text-center">
+            <img src="./src/img/logo_b.png" alt="" class="w-36 mx-auto mb-2 dark:hidden">
+            <img src="./src/img/logo_w.png" alt="" class="w-36 mx-auto mb-2 hidden dark:block">
+            <div class="w-max flex items-center gap-2 mx-auto">
+                <img src="./src/img/email.png" alt="" class="w-6 dark:hidden">
+                <img src="./src/img/email_w.png" alt="" class="w-6 hidden dark:block">
+                anuththaradias27@gmail.com
+            </div>
+        </div>
+        <di class="text-center sm:flex items-center justify-between border-t
+        border-gray-400 mx-[10%] mt-12 py-4">
+            <p>© 2024 Anuththara Dias. All rights reserved.</p>
+            <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0 cursor-pointer">
+                <li><a href="https://github.com/anudz27"></a>GitHub</li>
+                <li><a href="https://www.linkedin.com/in/anuththara-dias-4b1986250/"></a>LinkedIn</li>
+                <li><a href="https://www.facebook.com/profile.php?id=100084765497126"></a>Facebook</li>
+                <li><a href="https://www.instagram.com/anudz_27/"></a>Instagram</li>
+            </ul>
+        </div>
+     </div>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./Js/script.js"></script>
+</body>
+</html>
