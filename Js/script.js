@@ -67,3 +67,5 @@ const showMoreBtn = document.querySelector("#show-more-btn");
                 showMoreBtn.textContent = "Show more";
             }
         });
+
+        
